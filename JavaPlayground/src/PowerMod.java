@@ -23,6 +23,7 @@ public class PowerMod {
             a %= m;
             n >>= 1;
         }
+
         return result;
     }
 
