@@ -18,6 +18,7 @@ public class TableDriven {
             gradeLevel++;
         }
         System.out.println("Grade " + currentGrade + " , Score: " + score);
+
     }
 
 }
