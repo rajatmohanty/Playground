@@ -1,0 +1,7 @@
+grade	name	scale	age	
+abc	2	2	null
+abd	3	2	null
+abe	4	3	null
+abf	2	null	4
+abg	3	null	5
+abh	4	null	6

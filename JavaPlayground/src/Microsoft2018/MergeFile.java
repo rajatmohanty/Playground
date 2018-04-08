@@ -4,10 +4,16 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MergeFile {
+
+    public static void main(String[] args) {
+        File f1 = new File("Microsoft2018/file1.txt");
+        File f2 = new File("Microsoft2018/file2.txt");
+        new MergeFile().mergeFile(f1, f2);
+    }
+
     public File mergeFile(File f1, File f2) {
         if (f1 == null || f2 == null) {
             return null;
@@ -37,39 +43,50 @@ public class MergeFile {
                     map2.put(i, map1.get(keys2[i]));
                 } else {
                     map1.put(keys2[i], map1.size());
-                    map2.put(i, map1.get(keys2[i]));
+                    map2.put(i, map1.size() - 1);
                 }
             }
 
-            File outputFile = new File("path");
+            File outputFile = new File("Microsoft2018/file3.txt");
             FileWriter fw = new FileWriter(outputFile);
+
+            String newLine = "";
+            for (String s : map1.keySet()) {
+                newLine += s;
+                newLine += "\t";
+            }
+            newLine += "\n";
+            fw.write(newLine);
 
             String tempString;
             while ((tempString = bf1.readLine()) != null) {
-                String newLine = tempString;
+                newLine = tempString;
                 int map1Size = map1.size();
                 int tempStringSize = tempString.split("\t").length;
                 while (map1Size > tempStringSize) {
-                    newLine += "\t";
+                    newLine += "\tnull";
                     map1Size--;
                 }
+                newLine += "\n";
                 fw.write(newLine);
             }
             while ((tempString = bf2.readLine()) != null) {
-                ArrayList<String> keyArray = new ArrayList<>(map1.size());
+                newLine = "";
+                String[] keyArray = new String[map1.size()];
                 String[] tempStringArray = tempString.split("\t");
                 for (int i = 0; i < tempStringArray.length; i++) {
-                    keyArray.add(map2.get(i), tempStringArray[i]);
+                    keyArray[map2.get(i)] = tempStringArray[i];
                 }
-                String newLine = "";
-                for (int s = 0; s < keyArray.size(); s++) {
-                    newLine += keyArray.get(s);
-                    if (s != keyArray.size() - 1) {
+                for (int s = 0; s < keyArray.length; s++) {
+                    newLine += keyArray[s];
+                    if (s != keyArray.length - 1) {
                         newLine += "\t";
                     }
                 }
+                newLine += "\n";
                 fw.write(newLine);
             }
+            fw.flush();
             fw.close();
 
             return outputFile;

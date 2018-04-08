@@ -1,0 +1,4 @@
+name	age	scale
+abf	2	4
+abg	3	5
+abh	4	6
