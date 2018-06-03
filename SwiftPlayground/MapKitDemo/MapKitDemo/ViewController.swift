@@ -8,8 +8,9 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var addressTV: UITextView!
     @IBOutlet weak var latitudeTF: UITextField!
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
     lazy var geoc: CLGeocoder = {
         return CLGeocoder()//CLGeocoder地理编码要使用的类
     }()
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,23 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        locationManager.stopUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let changeLocation: [CLLocation] = locations
+        let currentLocation: CLLocation = changeLocation.last!
+        latitudeTF.text = "\(currentLocation.coordinate.latitude)"
+        longitudeTF.text = "\(currentLocation.coordinate.longitude)"
     }
     
     @IBAction func geocClick() {
@@ -37,10 +56,13 @@ class ViewController: UIViewController {
             if error != nil {
                 return
             }
+            
             // 1.获取地标对象(第一个相关度是最高的)
-            guard let clpl = clpls?.first else {return}
+            guard let clpl = clpls?.first else {
+                return
+            }
             // 2.设置地址
-            self.addressTV.text = "国家:\(clpl.country)\n城市:\(clpl.locality)\n地址:\(clpl.name)"
+            self.addressTV.text = "country:\(clpl.country ?? "")\ncity:\(clpl.locality ?? "")\ndistrict:\(clpl.subLocality ?? "")"
             // 3.设置latitudeTF该显示的经纬度
             self.latitudeTF.text = clpl.location?.coordinate.latitude.description ?? ""
             self.longitudeTF.text = clpl.location?.coordinate.longitude.description ?? ""
@@ -63,7 +85,7 @@ class ViewController: UIViewController {
                 return
             }
             // 2.设置地址
-            self.addressTV.text = "国家:\(clpl.country)\n城市:\(clpl.locality)\n地址:\(clpl.name)\n\(clpl.subLocality)"
+            self.addressTV.text = "Country:\(clpl.country ?? "")\nCity:\(clpl.locality ?? "")\nDistrict:\(clpl.subLocality ?? "")"
             // 3.设置经纬度
             self.latitudeTF.text = clpl.location?.coordinate.latitude.description ?? ""
             self.longitudeTF.text = clpl.location?.coordinate.longitude.description ?? ""

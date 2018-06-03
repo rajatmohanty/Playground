@@ -1,0 +1,79 @@
+{
+	"formatVersion" : 1,
+	"passTypeIdentifier" : "pass.com.krayc.namecard",
+	"serialNumber" : "XD",
+	"teamIdentifier" : "VEBQ28K9EA",
+	"barcodes" : [
+		{
+		    "message" : "https://github.com/songkuixi",
+		    "format" : "PKBarcodeFormatQR",
+		    "messageEncoding" : "iso-8859-1"
+		}
+	],
+	"organizationName" : "Kuixi Song",
+	"description" : "Kuixi Song",
+	"foregroundColor" : "rgb(255, 255, 255)",
+	"backgroundColor" : "rgb(20, 20, 20)",
+	"labelColor" : "rgb(190, 57, 57)",
+	"storeCard" : { 
+		"headerFields" : [
+			{
+				"key" : "header-name",
+				"textAlignment" : "PKTextAlignmentRight",
+				"label" : "Institution",
+				"value" : "Nanjing University"
+			}
+		],
+		"auxiliaryFields" : [
+			{
+				"key" : "blog",
+				"label" : "GITHUB",
+				"value" : "https://github.com/songkuixi",
+				"textAlignment" : "PKTextAlignmentLeft"
+			},
+			{
+				"key" : "twitter",
+				"label" : "TWITTER",
+				"value" : "@krayc425",
+				"textAlignment" : "PKTextAlignmentRight"
+			}
+		],
+		"backFields" : [ 
+			{
+				"key" : "back-name",
+				"label" : "Name",
+				"value" : "Kuixi Song"
+			},
+			{
+				"key" : "back-role",
+				"label" : "Institution",
+				"value" : "Nanjing University"
+			},
+			{
+				"key" : "back-major",
+				"label" : "Major",
+				"value" : "Software Engineering"
+			},
+			{
+				"key" : "back-email",
+				"label" : "Email",
+				"attributedValue" : "<a href='mailto:krayc425@gmail.com'>krayc425@gmail.com</a>"
+			},
+			{
+				"key" : "back-github",
+				"label" : "GitHub",
+				"attributedValue" : "<a href='https://github.com/songkuixi'>@songkuixi</a>"
+			},
+			{
+				"key" : "back-linkedin",
+				"label" : "LinkedIn",
+				"attributedValue" : "<a href='https://www.linkedin.com/in/krayc425/'>@krayc425</a>"
+			},
+			{
+				"key" : "back-twitter",
+				"label" : "Twitter",
+				"attributedValue" : "<a href='https://twitter.com/krayc425'>@krayc425</a>"
+			}
+		]
+	}
+}

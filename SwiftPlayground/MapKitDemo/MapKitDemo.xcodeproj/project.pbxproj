@@ -12,6 +12,7 @@
 		2418CCBC203338E6004D740F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2418CCBA203338E6004D740F /* Main.storyboard */; };
 		2418CCBE203338E6004D740F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2418CCBD203338E6004D740F /* Assets.xcassets */; };
 		2418CCC1203338E6004D740F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2418CCBF203338E6004D740F /* LaunchScreen.storyboard */; };
+		24B15ED52091FEFA002AEDA6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24B15ED42091FEFA002AEDA6 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		2418CCBD203338E6004D740F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2418CCC0203338E6004D740F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2418CCC2203338E6004D740F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24B15ED42091FEFA002AEDA6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24B15ED52091FEFA002AEDA6 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			children = (
 				2418CCB5203338E6004D740F /* MapKitDemo */,
 				2418CCB4203338E6004D740F /* Products */,
+				24B15ED32091FEF9002AEDA6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +66,14 @@
 				2418CCC2203338E6004D740F /* Info.plist */,
 			);
 			path = MapKitDemo;
+			sourceTree = "<group>";
+		};
+		24B15ED32091FEF9002AEDA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24B15ED42091FEFA002AEDA6 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
