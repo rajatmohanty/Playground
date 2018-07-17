@@ -5,7 +5,7 @@
 	"teamIdentifier" : "VEBQ28K9EA",
 	"barcodes" : [
 		{
-		    "message" : "https://github.com/songkuixi",
+		    "message" : "http://lc-dukadlcx.cn-n1.lcfile.com/ffedc6dce8e5e9916f11.pkpass",
 		    "format" : "PKBarcodeFormatQR",
 		    "messageEncoding" : "iso-8859-1"
 		}
@@ -13,8 +13,8 @@
 	"organizationName" : "Kuixi Song",
 	"description" : "Kuixi Song",
 	"foregroundColor" : "rgb(255, 255, 255)",
-	"backgroundColor" : "rgb(20, 20, 20)",
-	"labelColor" : "rgb(190, 57, 57)",
+	"backgroundColor" : "rgb(40, 45, 50)",
+	"labelColor" : "rgb(200, 60, 60)",
 	"storeCard" : { 
 		"headerFields" : [
 			{

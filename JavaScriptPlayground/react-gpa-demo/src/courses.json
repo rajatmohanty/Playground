@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Course A",
+    "gpa": 3.567
+  },
+  {
+    "name": "Course B",
+    "gpa": 3.757
+  },
+  {
+    "name": "Course C",
+    "gpa": 4.523
+  },
+  {
+    "name": "Course D",
+    "gpa": 2.653
+  },
+  {
+    "name": "Course E",
+    "gpa": 4.762
+  }
+]
